@@ -1,0 +1,12 @@
+.btn{
+    background-color: #183883;
+}
+
+.form-control.ng-touched.ng-invalid{
+    border : 2px red solid;
+}
+
+.message
+{
+    width: 50%;
+}

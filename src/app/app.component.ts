@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { NavbarComponent } from './navbar/navbar.component';
+
+
 
 @Component({
   selector: 'app-root',
@@ -6,5 +10,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'my-app';
+  title = 'Sales Hierarchy Portal';
+  
+  
+
+ 
+
 }

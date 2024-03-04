@@ -1,0 +1,499 @@
+<h1 class="text-black font-weight-bold mt-3 text-center">Dealer Details Form</h1>
+
+<div class="container mt-5">
+    
+    <div class="form_area">
+        <form #f="ngForm" (submit)="AddDealer()" novalidate> 
+            <h2 class="text-secondary text-center">Dealer Details</h2>
+            <div class="form-group text-black d-flex flex-column align-items-center">
+                <div class="d-flex justify-content-center" style="width: 50%;">
+                    <input type="text" placeholder="Enter Dealer Code" class="form-control" name="DealerCode" [(ngModel)]="DealerCode" required>
+                </div>
+                <div *ngIf="f.controls['DealerCode'].errors?.['required']" class="message">
+                    <div class="alert alert-danger" *ngIf="f.controls['DealerCode'].touched">Dealer Code is required</div>
+                </div>
+            </div>
+            
+
+            <div class="form-group text-black d-flex flex-column align-items-center">
+                <div class="d-flex justify-content-center" style="width: 50%;">
+                    <input type="text" placeholder="Enter Dealer Name" class="form-control" name="DealerName" [(ngModel)]="DealerName" required>
+                </div>
+                <div *ngIf="f.controls['DealerName'].errors?.['required']" class="message">
+                    <div class="alert alert-danger" *ngIf="f.controls['DealerName'].touched">Dealer Name is required</div>
+                </div>
+            </div>
+
+            <div class="form-group text-black d-flex flex-column align-items-center">
+                <div class="d-flex justify-content-center" style="width: 50%;">
+                    <input type="text" placeholder="Enter Dealer Email Address" class="form-control" name="DealerEmailAddress" [(ngModel)]="DealerEmailAddress" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required>
+                </div>
+                <div *ngIf="f.controls['DealerEmailAddress'].errors?.['required']" class="message">
+                    <div class="alert alert-danger" *ngIf="f.controls['DealerEmailAddress'].touched">Dealer Email is required</div>
+                </div>
+                <div *ngIf="f.controls['DealerEmailAddress'].errors?.['pattern']" class="message">
+                    <div class="alert alert-danger" *ngIf="f.controls['DealerEmailAddress'].touched">Invalid Email Address</div>
+                </div>
+            </div>
+                
+
+            <div class="form-group text-black d-flex flex-column align-items-center">
+                <div class="d-flex justify-content-center" style="width: 50%;">
+                    <input type="text" placeholder="Enter Dealer Contact Number" class="form-control" name="DealerContactNumber" [(ngModel)]="DealerContactNumber" pattern="[0-9]{10}" required>
+                </div>
+                <div *ngIf="f.controls['DealerContactNumber'].errors?.['required']" class="message">
+                    <div class="alert alert-danger" *ngIf="f.controls['DealerContactNumber'].touched">Dealer Phone number is required</div>
+                </div>
+                <div *ngIf="f.controls['DealerContactNumber'].errors?.['pattern']" class="message">
+                    <div class="alert alert-danger" *ngIf="f.controls['DealerContactNumber'].touched">Contact number must be exactly 10 digits</div>
+                </div>
+            </div>
+            
+            <br>
+            <br>
+            <h2 class="text-secondary text-center">TM Details</h2>
+            <div class="form-group text-black d-flex flex-column align-items-center">
+                <div class="d-flex justify-content-center" style="width: 50%;">
+                    <input type="text" placeholder="Enter TM Role" class="form-control" name="TMRole" [(ngModel)]="TMRole" required>
+                </div>
+                <div *ngIf="f.controls['TMRole'].errors?.['required']" class="message">
+                    <div class="alert alert-danger" *ngIf="f.controls['TMRole'].touched">TM Role is required</div>
+                </div>
+            </div>
+
+            <div class="form-group text-black d-flex flex-column align-items-center">
+                <div class="d-flex justify-content-center" style="width: 50%;">
+                    <input type="text" placeholder="Enter TM Name" class="form-control" name="TMName" [(ngModel)]="TMName" required>
+                </div>
+                <div *ngIf="f.controls['TMName'].errors?.['required']" class="message">
+                    <div class="alert alert-danger" *ngIf="f.controls['TMName'].touched">TM Name is required</div>
+                </div>
+            </div>
+
+            <div class="form-group text-black d-flex flex-column align-items-center">
+                <div class="d-flex justify-content-center" style="width: 50%;">
+                    <input type="text" placeholder="Enter TM Email Address" class="form-control" name="TMEmailAddress" [(ngModel)]="TMEmailAddress" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required>
+                </div>
+                <div *ngIf="f.controls['TMEmailAddress'].errors?.['required']" class="message">
+                    <div class="alert alert-danger" *ngIf="f.controls['TMEmailAddress'].touched">TM Email is required</div>
+                </div>
+                <div *ngIf="f.controls['TMEmailAddress'].errors?.['pattern']" class="message">
+                    <div class="alert alert-danger" *ngIf="f.controls['TMEmailAddress'].touched">Invalid Email Address</div>
+                </div>
+            </div>
+
+            <div class="form-group text-black d-flex flex-column align-items-center">
+                <div class="d-flex justify-content-center" style="width: 50%;">
+                    <input type="text" placeholder="Enter TM Phone Number" class="form-control" name="TMPhoneNumber" [(ngModel)]="TMPhoneNumber" pattern="[0-9]{10}" required>
+                </div>
+                <div *ngIf="f.controls['TMPhoneNumber'].errors?.['required']" class="message">
+                    <div class="alert alert-danger" *ngIf="f.controls['TMPhoneNumber'].touched">TM Phone number is required</div>
+                </div>
+                <div *ngIf="f.controls['TMPhoneNumber'].errors?.['pattern']" class="message">
+                    <div class="alert alert-danger" *ngIf="f.controls['TMPhoneNumber'].touched">Contact number must be exactly 10 digits</div>
+                </div>
+            </div>
+
+            <div class="form-group text-black d-flex flex-column align-items-center">
+                <div class="d-flex justify-content-center" style="width: 50%;">
+                    <input type="text" placeholder="Enter TM User Name" class="form-control" name="TMUserName" [(ngModel)]="TMUserName" required>
+                </div>
+                <div *ngIf="f.controls['TMUserName'].errors?.['required']" class="message">
+                    <div class="alert alert-danger" *ngIf="f.controls['TMUserName'].touched">TM User Name is required</div>
+                </div>
+            </div>
+            <br>
+            <br>
+
+            <h2 class="text-secondary text-center">AM Details</h2>
+            <div class="form-group text-black d-flex flex-column align-items-center">
+                <div class="d-flex justify-content-center" style="width: 50%;">
+                    <input type="text" placeholder="Enter AM Role" class="form-control" name="AMRole" [(ngModel)]="AMRole" required>
+                </div>
+                <div *ngIf="f.controls['AMRole'].errors?.['required']" class="message">
+                    <div class="alert alert-danger" *ngIf="f.controls['AMRole'].touched">AM Role is required</div>
+                </div> 
+            </div>
+            
+            <div class="form-group text-black d-flex flex-column align-items-center">
+                <div class="d-flex justify-content-center" style="width: 50%;">
+                    <input type="text" placeholder="Enter AM Name" class="form-control" name="AMName" [(ngModel)]="AMName" required>
+                </div>
+                <div *ngIf="f.controls['AMName'].errors?.['required']" class="message">
+                    <div class="alert alert-danger" *ngIf="f.controls['AMName'].touched">AM Name is required</div>
+                </div>
+            </div>
+
+            <div class="form-group text-black d-flex flex-column align-items-center">
+                <div class="d-flex justify-content-center" style="width: 50%;">
+                    <input type="text" placeholder="Enter AM Email Address" class="form-control" name="AMEmailAddress" [(ngModel)]="AMEmailAddress" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required>
+                </div>
+                <div *ngIf="f.controls['AMEmailAddress'].errors?.['required']" class="message">
+                    <div class="alert alert-danger" *ngIf="f.controls['AMEmailAddress'].touched">AM Email is required</div>
+                </div>
+                <div *ngIf="f.controls['AMEmailAddress'].errors?.['pattern']" class="message">
+                    <div class="alert alert-danger" *ngIf="f.controls['AMEmailAddress'].touched">Invalid Email Address</div>
+                </div>
+            </div>
+
+            <div class="form-group text-black d-flex flex-column align-items-center">
+                <div class="d-flex justify-content-center" style="width: 50%;">
+                    <input type="text" placeholder="Enter AM Phone Number" class="form-control" name="AMPhoneNumber" [(ngModel)]="AMPhoneNumber" pattern="[0-9]{10}" required>
+                </div>
+                <div *ngIf="f.controls['AMPhoneNumber'].errors?.['required']" class="message">
+                    <div class="alert alert-danger" *ngIf="f.controls['AMPhoneNumber'].touched">AM Phone number is required</div>
+                </div>
+                <div *ngIf="f.controls['AMPhoneNumber'].errors?.['pattern']" class="message">
+                    <div class="alert alert-danger" *ngIf="f.controls['AMPhoneNumber'].touched">Contact number must be exactly 10 digits</div>
+                </div>
+            </div>
+
+            <div class="form-group text-black d-flex flex-column align-items-center">
+                <div class="d-flex justify-content-center" style="width: 50%;">
+                    <input type="text" placeholder="Enter AM User Name" class="form-control" name="AMUserName" [(ngModel)]="AMUserName" required>
+                </div>
+                <div *ngIf="f.controls['AMUserName'].errors?.['required']" class="message">
+                    <div class="alert alert-danger" *ngIf="f.controls['AMUserName'].touched">Am User Name is required</div>
+                </div>
+            </div>
+            <br>
+            <br>
+
+            <h2 class="text-secondary text-center">NSM Details</h2>
+            <div class="form-group text-black d-flex flex-column align-items-center">
+                <div class="d-flex justify-content-center" style="width: 50%;">
+                    <input type="text" placeholder="Enter NSM Role" class="form-control" name="NSMRole" [(ngModel)]="NSMRole" required>
+                </div>
+                <div *ngIf="f.controls['NSMRole'].errors?.['required']" class="message">
+                    <div class="alert alert-danger" *ngIf="f.controls['NSMRole'].touched">NSM Role is required</div>
+                </div>
+            </div>
+
+            <div class="form-group text-black d-flex flex-column align-items-center">
+                <div class="d-flex justify-content-center" style="width: 50%;">
+                    <input type="text" placeholder="Enter NSM Name" class="form-control" name="NSMName" [(ngModel)]="NSMName" required>
+                </div>
+                <div *ngIf="f.controls['NSMName'].errors?.['required']" class="message">
+                    <div class="alert alert-danger" *ngIf="f.controls['NSMName'].touched">NSM Name is required</div>
+                </div>
+            </div>
+
+            <div class="form-group text-black d-flex flex-column align-items-center">
+                <div class="d-flex justify-content-center" style="width: 50%;">
+                    <input type="text" placeholder="Enter NSM Email Address" class="form-control" name="NSMEmailAddress" [(ngModel)]="NSMEmailAddress" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required>
+                </div>
+                <div *ngIf="f.controls['NSMEmailAddress'].errors?.['required']" class="message">
+                    <div class="alert alert-danger" *ngIf="f.controls['NSMEmailAddress'].touched">NSM Email is required</div>
+                </div>
+                <div *ngIf="f.controls['NSMEmailAddress'].errors?.['pattern']" class="message">
+                    <div class="alert alert-danger" *ngIf="f.controls['NSMEmailAddress'].touched">Invalid Email Address</div>
+                </div>
+            </div>
+
+            <div class="form-group text-black d-flex flex-column align-items-center">
+                <div class="d-flex justify-content-center" style="width: 50%;">
+                    <input type="text" placeholder="Enter NSM Phone Number" class="form-control" name="NSMPhoneNumber" [(ngModel)]="NSMPhoneNumber" pattern="[0-9]{10}" required>
+                </div>
+                <div *ngIf="f.controls['NSMPhoneNumber'].errors?.['required']" class="message">
+                    <div class="alert alert-danger" *ngIf="f.controls['NSMPhoneNumber'].touched">NSM Phone number is required</div>
+                </div>
+                <div *ngIf="f.controls['NSMPhoneNumber'].errors?.['pattern']" class="message">
+                    <div class="alert alert-danger" *ngIf="f.controls['NSMPhoneNumber'].touched">Contact number must be exactly 10 digits</div>
+                </div>
+            </div>
+
+            <div class="form-group text-black d-flex flex-column align-items-center">
+                <div class="d-flex justify-content-center" style="width: 50%;">
+                    <input type="text" placeholder="Enter NSM User Name" class="form-control" name="NSMUserName" [(ngModel)]="NSMUserName" required>
+                </div>
+                <div *ngIf="f.controls['NSMUserName'].errors?.['required']" class="message">
+                    <div class="alert alert-danger" *ngIf="f.controls['NSMUserName'].touched">NSM User Name is required</div>
+                </div>
+            </div>
+            <br>
+            <br>
+
+            <h2 class="text-secondary text-center">NSM1 Details</h2>
+            <div class="form-group text-black d-flex flex-column align-items-center">
+                <div class="d-flex justify-content-center" style="width: 50%;">
+                    <input type="text" placeholder="Enter NSM1 Name" class="form-control" name="NSM1Name" [(ngModel)]="NSM1Name" required>
+                </div>
+                <div *ngIf="f.controls['NSM1Name'].errors?.['required']" class="message">
+                    <div class="alert alert-danger" *ngIf="f.controls['NSM1Name'].touched">NSM1 Name is required</div>
+                </div>
+            </div>
+
+            <div class="form-group text-black d-flex flex-column align-items-center">
+                <div class="d-flex justify-content-center" style="width: 50%;">
+                    <input type="text" placeholder="Enter NSM1 Email Address" class="form-control" name="NSM1EmailAddress" [(ngModel)]="NSM1EmailAddress" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required>
+                </div>
+                <div *ngIf="f.controls['NSM1EmailAddress'].errors?.['required']" class="message">
+                    <div class="alert alert-danger" *ngIf="f.controls['NSM1EmailAddress'].touched">NSM1 Email is required</div>
+                </div>
+                <div *ngIf="f.controls['NSM1EmailAddress'].errors?.['pattern']" class="message">
+                    <div class="alert alert-danger" *ngIf="f.controls['NSM1EmailAddress'].touched">Invalid Email Address</div>
+                </div>
+            </div>
+
+            <div class="form-group text-black d-flex flex-column align-items-center">
+                <div class="d-flex justify-content-center" style="width: 50%;">
+                    <input type="text" placeholder="Enter NSM1 Phone Number" class="form-control" name="NSM1PhoneNumber" [(ngModel)]="NSM1PhoneNumber" pattern="[0-9]{10}" required>
+                </div>
+                <div *ngIf="f.controls['NSM1PhoneNumber'].errors?.['required']" class="message">
+                    <div class="alert alert-danger" *ngIf="f.controls['NSM1PhoneNumber'].touched">NSM1 Phone number is required</div>
+                </div>
+                <div *ngIf="f.controls['NSM1PhoneNumber'].errors?.['pattern']" class="message">
+                    <div class="alert alert-danger" *ngIf="f.controls['NSM1PhoneNumber'].touched">Contact number must be exactly 10 digits</div>
+                </div>
+            </div>
+
+            <div class="form-group text-black d-flex flex-column align-items-center">
+                <div class="d-flex justify-content-center" style="width: 50%;">
+                    <input type="text" placeholder="Enter NSM1 User Name" class="form-control" name="NSM1UserName" [(ngModel)]="NSM1UserName" required>
+                </div>
+                <div *ngIf="f.controls['NSM1UserName'].errors?.['required']" class="message">
+                    <div class="alert alert-danger" *ngIf="f.controls['NSM1UserName'].touched">NSM1 User Name is required</div>
+                </div>
+            </div>
+            <br>
+            <br>
+
+            <h2 class="text-secondary text-center">VP Details</h2>
+            <div class="form-group text-black d-flex flex-column align-items-center">
+                <mat-form-field appearance="fill" style="width: 50%;">
+                    <mat-label>Select VP Role</mat-label>
+                    <mat-select [(ngModel)]="VPRole" name="VPRole" required>
+                      <mat-option value="All India">All India</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  <div *ngIf="f.controls['VPRole'].errors?.['required']" class="message">
+                    <div class="alert alert-danger" *ngIf="f.controls['VPRole'].touched">VP Role is required</div>
+                  </div>
+            </div>
+            
+
+            <div class="form-group text-black d-flex flex-column align-items-center">
+                <mat-form-field appearance="fill" style="width: 50%;" >
+                    <mat-label>Select VP Name</mat-label>
+                    <mat-select [(ngModel)]="VPName" name="VPName" required>
+                      <mat-option value="UB Pandey">UB Pandey</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <div *ngIf="f.controls['VPName'].errors?.['required']" class="message">
+                    <div class="alert alert-danger" *ngIf="f.controls['VPName'].touched">VP Name is required</div>
+                </div>
+            </div>
+
+            <div class="form-group text-black d-flex flex-column align-items-center">
+                <mat-form-field appearance="fill" style="width: 50%;">
+                    <mat-label>Select VP Email Address</mat-label>
+                    <mat-select [(ngModel)]="VPEmailAddress" name="VPEmailAddress" required>
+                      <mat-option value="UBP@tvsmotor.com">UBP@tvsmotor.com</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <div *ngIf="f.controls['VPEmailAddress'].errors?.['required']" class="message">
+                    <div class="alert alert-danger" *ngIf="f.controls['VPEmailAddress'].touched">VP Email Address is required</div>
+                </div>
+            </div>
+
+            <div class="form-group text-black d-flex flex-column align-items-center">
+                <mat-form-field appearance="fill" style="width: 50%;">
+                    <mat-label>Select VP Phone Number</mat-label>
+                    <mat-select [(ngModel)]="VPPhoneNumber" name="VPPhoneNumber" required>
+                      <mat-option value="8130222330">8130222330</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <div *ngIf="f.controls['VPPhoneNumber'].errors?.['required']" class="message">
+                    <div class="alert alert-danger" *ngIf="f.controls['VPPhoneNumber'].touched">VP Phone Number is required</div>
+                </div>
+            </div>
+
+            <div class="form-group text-black d-flex flex-column align-items-center">
+                <mat-form-field appearance="fill" style="width: 50%;">
+                    <mat-label>Select VP User Name</mat-label>
+                    <mat-select [(ngModel)]="VPUserName" name="VPUserName" required>
+                      <mat-option value="UBP">UBP</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <div *ngIf="f.controls['VPUserName'].errors?.['required']" class="message">
+                    <div class="alert alert-danger" *ngIf="f.controls['VPUserName'].touched">VP User Name is required</div>
+                </div>
+            </div>
+            <br>
+            <br>
+
+            <h2 class="text-secondary text-center">VP1 Details</h2>
+            <div class="form-group text-black d-flex flex-column align-items-center">
+                <mat-form-field appearance="fill" style="width: 50%;">
+                    <mat-label>Select VP1 Name</mat-label>
+                    <mat-select [(ngModel)]="VP1Name" name="VP1Name" required>
+                      <mat-option value="Vidit Singh">Vidit Singh</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <div *ngIf="f.controls['VP1Name'].errors?.['required']" class="message">
+                    <div class="alert alert-danger" *ngIf="f.controls['VP1Name'].touched">VP1 Name is required</div>
+                </div>
+            </div>
+
+            <div class="form-group text-black d-flex flex-column align-items-center">
+                <mat-form-field appearance="fill" style="width: 50%;">
+                    <mat-label>Select VP1 Email Address</mat-label>
+                    <mat-select [(ngModel)]="VP1EmailAddress" name="VP1EmailAddress" required>
+                      <mat-option value="Vidit.Singh@tvsmotor.com">Vidit.Singh@tvsmotor.com</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <div *ngIf="f.controls['VP1EmailAddress'].errors?.['required']" class="message">
+                    <div class="alert alert-danger" *ngIf="f.controls['VP1EmailAddress'].touched">VP1 Email Address is required</div>
+                </div>  
+            </div>
+
+            <div class="form-group text-black d-flex flex-column align-items-center">
+                <mat-form-field appearance="fill" style="width: 50%;">
+                    <mat-label>Select VP1 Phone Number</mat-label>
+                    <mat-select [(ngModel)]="VP1PhoneNumber" name="VP1PhoneNumber" required>
+                      <mat-option value="7418265222">7418265222</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <div *ngIf="f.controls['VP1PhoneNumber'].errors?.['required']" class="message">
+                    <div class="alert alert-danger" *ngIf="f.controls['VP1PhoneNumber'].touched">VP1 Phone Number is required</div>
+                </div>
+            </div>
+
+            <div class="form-group text-black d-flex flex-column align-items-center">
+                <mat-form-field appearance="fill" style="width: 50%;">
+                    <mat-label>Select VP1 User Name</mat-label>
+                    <mat-select [(ngModel)]="VP1UserName" name="VP1UserName" required>
+                      <mat-option value="Vidit.Singh">Vidit.Singh</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <div *ngIf="f.controls['VP1UserName'].errors?.['required']" class="message">
+                    <div class="alert alert-danger" *ngIf="f.controls['VP1UserName'].touched">VP1 User Name is required</div>
+                </div>
+            </div>
+            <br>
+            <br>
+
+            <h2 class="text-secondary text-center">VP2 Details</h2>
+            <div class="form-group text-black d-flex flex-column align-items-center">
+                <mat-form-field appearance="fill" style="width: 50%;">
+                    <mat-label>Select VP2 Name</mat-label>
+                    <mat-select [(ngModel)]="VP2Name" name="VP2Name" required>
+                      <mat-option value="D.Karthick">D.Karthick</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <div *ngIf="f.controls['VP2Name'].errors?.['required']" class="message">
+                    <div class="alert alert-danger" *ngIf="f.controls['VP2Name'].touched">VP2 Name is required</div>
+                </div>
+            </div>
+
+            <div class="form-group text-black d-flex flex-column align-items-center">
+                <mat-form-field appearance="fill" style="width: 50%;">
+                    <mat-label>Select VP2 Email Address</mat-label>
+                    <mat-select [(ngModel)]="VP2EmailAddress" name="VP2EmailAddress" required>
+                      <mat-option value="D.Karthick@tvsmotor.com">D.Karthick@tvsmotor.com</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <div *ngIf="f.controls['VP2EmailAddress'].errors?.['required']" class="message">
+                    <div class="alert alert-danger" *ngIf="f.controls['VP2EmailAddress'].touched">VP2 Email Address is required</div>
+                </div>
+            </div>
+
+            <div class="form-group text-black d-flex flex-column align-items-center">
+                <mat-form-field appearance="fill" style="width: 50%;">
+                    <mat-label>Select VP2 Phone Number</mat-label>
+                    <mat-select [(ngModel)]="VP2PhoneNumber" name="VP2PhoneNumber" required>
+                      <mat-option value="9550411007">9550411007</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <div *ngIf="f.controls['VP2PhoneNumber'].errors?.['required']" class="message">
+                    <div class="alert alert-danger" *ngIf="f.controls['VP2PhoneNumber'].touched">VP2 Phone Number is required</div>
+                </div>
+            </div>
+
+            <div class="form-group text-black d-flex flex-column align-items-center">
+                <mat-form-field appearance="fill" style="width: 50%;">
+                    <mat-label>Select VP2 User Name</mat-label>
+                    <mat-select [(ngModel)]="VP2UserName" name="VP2UserName" required>
+                      <mat-option value="D.Karthick">D.Karthick</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <div *ngIf="f.controls['VP2UserName'].errors?.['required']" class="message">
+                    <div class="alert alert-danger" *ngIf="f.controls['VP2UserName'].touched">VP2 User Name is required</div>
+                </div>
+            </div>
+            <br>
+            <br>
+
+            <h2 class="text-secondary text-center ">HO Details</h2>
+            <div class="form-group text-black d-flex flex-column align-items-center">
+                <mat-form-field appearance="fill" style="width: 50%;">
+                    <mat-label>Select HO Role</mat-label>
+                    <mat-select [(ngModel)]="HORole" name="HORole" required>
+                      <mat-option value="All India">All India</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <div *ngIf="f.controls['HORole'].errors?.['required']" class="message">
+                    <div class="alert alert-danger" *ngIf="f.controls['HORole'].touched">HO Role is required</div>
+                </div>
+            </div>
+
+            <div class="form-group text-black d-flex flex-column align-items-center">
+                <mat-form-field appearance="fill" style="width: 50%;">
+                    <mat-label>Select HO Name</mat-label>
+                    <mat-select [(ngModel)]="HOName" name="HOName" required>
+                      <mat-option value="SALES SUPPORT">SALES SUPPORT</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <div *ngIf="f.controls['HOName'].errors?.['required']" class="message">
+                    <div class="alert alert-danger" *ngIf="f.controls['HOName'].touched">HO Name is required</div>
+                </div>
+            </div>
+
+            <div class="form-group text-black d-flex flex-column align-items-center">
+                <mat-form-field appearance="fill" style="width: 50%;">
+                    <mat-label>Select HO Email Address</mat-label>
+                    <mat-select [(ngModel)]="HOEmailAddress" name="HOEmailAddress" required>
+                      <mat-option value="SALES.SUPPORT@TVSMOTOR.COM">SALES.SUPPORT@TVSMOTOR.COM</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <div *ngIf="f.controls['HOEmailAddress'].errors?.['required']" class="message">
+                    <div class="alert alert-danger" *ngIf="f.controls['HOEmailAddress'].touched">HO Email Address is required</div>
+                </div>
+            </div>
+
+            <div class="form-group text-black d-flex flex-column align-items-center">
+                <mat-form-field appearance="fill" style="width: 50%;">
+                    <mat-label>Select HO Phone Number</mat-label>
+                    <mat-select [(ngModel)]="HOPhoneNumber" name="HOPhoneNumber" required>
+                      <mat-option value="000">000</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <div *ngIf="f.controls['HOPhoneNumber'].errors?.['required']" class="message">
+                    <div class="alert alert-danger" *ngIf="f.controls['HOPhoneNumber'].touched">HO Phone Number is required</div>
+                </div>
+            </div>
+
+            <div class="form-group text-black d-flex flex-column align-items-center">
+                <mat-form-field appearance="fill" style="width: 50%;">
+                    <mat-label>Select HO User Name</mat-label>
+                    <mat-select [(ngModel)]="HOUserName" name="HOUserName" required>
+                      <mat-option value="SALES.SUPPORT">SALES.SUPPORT</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <div *ngIf="f.controls['HOUserName'].errors?.['required']" class="message">
+                    <div class="alert alert-danger" *ngIf="f.controls['HOUserName'].touched">HO User Name is required</div>
+                </div>
+            </div>
+            <br>
+    
+
+            <div class="container d-flex justify-content-center">
+                <button type="submit" class="btn text-white">Add Dealer</button>
+            </div>
+            <br>
+            <br>
+            
+        </form>
+    </div>
+</div>
+

@@ -1,0 +1,126 @@
+<div class = "view-page">
+    <h1 class=" dealer-details-heading text-black font-weight-bold mt-3 text-center">Dealer Details </h1>
+    <br>
+
+    <div class="row" >
+        <!-- Contact Information -->
+        <div class="col-md-8">
+            <div class="container d-flex  justify-content-left">
+                <input type="text" [(ngModel)]="searchTerm" placeholder="Search here.." class="col-md-4">
+                &nbsp;
+                <button (click)="onSearch()" class="button btn text-white">Search</button>
+            </div>
+        </div>
+    
+        <div class="col-md-4 ">
+            <div class="container d-flex justify-content-end">
+                <button type="button" class="button btn text-white" (click)="Export()">Export</button>
+                &nbsp;
+                <button type="button" class="button btn text-white" (click)="View()">Display List of Dealers </button>
+            </div>
+        </div>
+    </div>
+
+    <br><br><br>
+    <div class="display max-height-500 overflow-auto" >
+        <table class="table table-bordered table-hover ">
+            <thead class="bg-secondary text-allign-center font-weight-bold">
+                <th>Dealer Code</th>
+                <th>Dealer Name</th>
+                <th>Dealer Email Address</th>
+                <th>Dealer Contact Number</th>
+                <th>TM Role</th>
+                <th>TM Name</th>
+                <th>TM Email Address</th>
+                <th>TM Phone Number</th>
+                <th>TM User Name</th>
+                <th>AM Role</th>
+                <th>AM Name</th>
+                <th>AM Email Address</th>
+                <th>AM Phone Number</th>
+                <th>AM User Name</th>
+                <th>NSM Role</th>
+                <th>NSM Name</th>
+                <th>NSM Email Address</th>
+                <th>NSM Phone Number</th>
+                <th>NSM User Name</th>
+                <th>NSM1 Name</th>
+                <th>NSM1 Email Address</th>
+                <th>NSM1 Phone Number</th>
+                <th>NSM1 User Name</th>
+                <th>VP Role</th>
+                <th>VP Name</th>
+                <th>VP Email Address</th>
+                <th>VP Phone Number</th>
+                <th>VP User Name</th>
+                <th>VP1 Name</th>
+                <th>VP1 Email Address</th>
+                <th>VP1 Phone Number</th>
+                <th>VP1 User Name</th>
+                <th>VP2 Name</th>
+                <th>VP2 Email Address</th>
+                <th>VP2 Phone Number</th>
+                <th>VP2 User Name</th>
+                <th>HO Role</th>
+                <th>HO Name</th>
+                <th>HO Email Address</th>
+                <th>HO Phone Number</th>
+                <th>HO User Name</th>
+                <th>Action</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let dealer of data">
+                    <td>{{ dealer.DealerCode }}</td>
+                    <td>{{ dealer.DealerName }}</td>
+                    <td>{{ dealer.DealerEmailAddress }}</td>
+                    <td>{{ dealer.DealerContactNumber }}</td>
+                    <td>{{ dealer.TMRole }}</td>
+                    <td>{{ dealer.TMName }}</td>
+                    <td>{{ dealer.TMEmailAddress }}</td>
+                    <td>{{ dealer.TMPhoneNumber }}</td>
+                    <td>{{ dealer.TMUserName }}</td>
+                    <td>{{ dealer.AMRole }}</td>
+                    <td>{{ dealer.AMName }}</td>
+                    <td>{{ dealer.AMEmailAddress }}</td>
+                    <td>{{ dealer.AMPhoneNumber }}</td>
+                    <td>{{ dealer.AMUserName }}</td>
+                    <td>{{ dealer.NSMRole }}</td>
+                    <td>{{ dealer.NSMName }}</td>
+                    <td>{{ dealer.NSMEmailAddress }}</td>
+                    <td>{{ dealer.NSMPhoneNumber }}</td>
+                    <td>{{ dealer.NSMUserName }}</td>
+                    <td>{{ dealer.NSM1Name }}</td>
+                    <td>{{ dealer.NSM1EmailAddress }}</td>
+                    <td>{{ dealer.NSM1PhoneNumber }}</td>
+                    <td>{{ dealer.NSM1UserName }}</td>
+                    <td>{{ dealer.VPRole }}</td>
+                    <td>{{ dealer.VPName }}</td>
+                    <td>{{ dealer.VPEmailAddress }}</td>
+                    <td>{{ dealer.VPPhoneNumber }}</td>
+                    <td>{{ dealer.VPUserName }}</td>
+                    <td>{{ dealer.VP1Name }}</td>
+                    <td>{{ dealer.VP1EmailAddress }}</td>
+                    <td>{{ dealer.VP1PhoneNumber }}</td>
+                    <td>{{ dealer.VP1UserName }}</td>
+                    <td>{{ dealer.VP2Name }}</td>
+                    <td>{{ dealer.VP2EmailAddress }}</td>
+                    <td>{{ dealer.VP2PhoneNumber }}</td>
+                    <td>{{ dealer.VP2UserName }}</td>
+                    <td>{{ dealer.HORole }}</td>
+                    <td>{{ dealer.HOName }}</td>
+                    <td>{{ dealer.HOEmailAddress }}</td>
+                    <td>{{ dealer.HOPhoneNumber }}</td>
+                    <td>{{ dealer.HOUserName }}</td>
+                    <td>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editEmployee" [routerLink]="['/dealer-edit', dealer.DealerCode]" style="width : 100%">Edit</button>
+                    <button (click)="DeleteDealer(dealer.DealerCode)" class="btn btn-danger">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+</div>
+<br><br><br>
+
+

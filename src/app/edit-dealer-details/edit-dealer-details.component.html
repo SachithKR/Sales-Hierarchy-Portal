@@ -1,0 +1,332 @@
+<h1 class="text-black font-weight-bold mt-3  text-center">Edit Dealer Details Form</h1>
+
+<div class="container mt-5">
+    
+    <div class="form_area">
+        <form #f="ngForm" (ngSubmit)="UpdateDealer()">
+
+            <h2 class="text-secondary text-center">Dealer Details</h2>
+            <div class="form-group text-black d-flex justify-content-center">
+                <!-- <label>Code</label>  -->
+                <h3>Dealer Id : {{ dealerId }}</h3>
+                <!-- <input type="text" placeholder="Enter Dealer Code" class="form-control" name="DealerCode" [(ngModel)]="DealerCode" style="width: 50%;"> -->
+            </div>
+
+            <div class="form-group text-black d-flex justify-content-center">
+                <!-- <label>Name</label> -->
+                <input type="text" placeholder="Enter Dealer Name" class="form-control" name="DealerName" [(ngModel)]="data[0].DealerName" style="width: 50%;">
+            </div>
+
+            <div class="form-group text-black d-flex justify-content-center">
+                <!-- <label>Email Address</label> -->
+                <input type="text" placeholder="Enter Dealer Email Address" class="form-control" name="DealerEmailAddress" [(ngModel)]="data[0].DealerEmailAddress" style="width: 50%;" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required>
+                <!-- <div *ngIf="DealerEmailAddress.errors.required">
+                    <div class="alert alert-danger" *ngIf="DealerEmailAddress.touched && DealerEmailAddress.invaild"> Email is required</div>
+                </div>
+                <div *ngIf="DealerEmailAddress.errors.pattern">
+                    <div class="alert alert-danger" *ngIf="DealerEmailAddress.touched && DealerEmailAddress.invaild">Invalid Email Address</div>
+                </div> -->
+            </div>
+
+            <div class="form-group text-black d-flex justify-content-center">
+                <!-- <label>Contact Number</label> -->
+                <input type="text" placeholder="Enter Dealer Contact Number" class="form-control" name="DealerContactNumber" [(ngModel)]="data[0].DealerContactNumber" style="width: 50%;">
+            </div>
+            <br>
+            <br>
+            <h2 class="text-secondary text-center">TM Details</h2>
+            <div class="form-group text-black d-flex justify-content-center">
+                <!-- <label>TM Role</label> -->
+                <input type="text" placeholder="Enter TM Role" class="form-control" name="TMRole" [(ngModel)]="data[0].TMRole" style="width: 50%;">
+            </div>
+
+            <div class="form-group text-black d-flex justify-content-center">
+                <!-- <label>Name</label> -->
+                <input type="text" placeholder="Enter TM Name" class="form-control" name="TMName" [(ngModel)]="data[0].TMName" style="width: 50%;">
+            </div>
+
+            <div class="form-group text-black d-flex justify-content-center">
+                <!-- <label>Email Address</label> -->
+                <input type="text" placeholder="Enter TM Email Address" class="form-control" name="TMEmailAddress" [(ngModel)]="data[0].TMEmailAddress" style="width: 50%;">
+            </div>
+
+            <div class="form-group text-black d-flex justify-content-center">
+                <!-- <label>Phone Number</label> -->
+                <input type="text" placeholder="Enter TM Phone Number" class="form-control" name="TMPhoneNumber" [(ngModel)]="data[0].TMPhoneNumber" style="width: 50%;">
+            </div>
+
+            <div class="form-group text-black d-flex justify-content-center">
+                <!-- <label>User Name</label> -->
+                <input type="text" placeholder="Enter TM User Name" class="form-control" name="TMUserName" [(ngModel)]="data[0].TMUserName" style="width: 50%;">
+            </div>
+            <br>
+            <br>
+
+            <h2 class="text-secondary text-center">AM Details</h2>
+            <div class="form-group text-black d-flex justify-content-center">
+                <!-- <label>Role</label> -->
+                <input type="text" placeholder="Enter AM Role" class="form-control" name="AMRole" [(ngModel)]="data[0].AMRole" style="width: 50%;">
+            </div>
+            
+            <div class="form-group text-black d-flex justify-content-center">
+                <!-- <label>Name</label> -->
+                <input type="text" placeholder="Enter AM Name" class="form-control" name="AMName" [(ngModel)]="data[0].AMName" style="width: 50%;">
+            </div>
+
+            <div class="form-group text-black d-flex justify-content-center">
+                <!-- <label>Email Address</label> -->
+                <input type="text" placeholder="Enter AM Email Address" class="form-control" name="AMEmailAddress" [(ngModel)]="data[0].AMEmailAddress" style="width: 50%;">
+            </div>
+
+            <div class="form-group text-black d-flex justify-content-center">
+                <!-- <label>Phone Number</label> -->
+                <input type="text" placeholder="Enter AM Phone Number" class="form-control" name="AMPhoneNumber" [(ngModel)]="data[0].AMPhoneNumber" style="width: 50%;">
+            </div>
+
+            <div class="form-group text-black d-flex justify-content-center">
+                <!-- <label>User Name</label> -->
+                <input type="text" placeholder="Enter AM User Name" class="form-control" name="AMUserName" [(ngModel)]="data[0].AMUserName" style="width: 50%;">
+            </div>
+            <br>
+            <br>
+
+            <h2 class="text-secondary text-center">NSM Details</h2>
+            <div class="form-group text-black d-flex justify-content-center">
+                <!-- <label>Role</label> -->
+                <input type="text" placeholder="Enter NSM Role" class="form-control" name="NSMRole" [(ngModel)]="data[0].NSMRole" style="width: 50%;">
+            </div>
+
+            <div class="form-group text-black d-flex justify-content-center">
+                <!-- <label>Name</label> -->
+                <input type="text" placeholder="Enter NSM Name" class="form-control" name="NSMName" [(ngModel)]="data[0].NSMName" style="width: 50%;">
+            </div>
+
+            <div class="form-group text-black d-flex justify-content-center">
+                <!-- <label>Email Address</label> -->
+                <input type="text" placeholder="Enter NSM Email Address" class="form-control" name="NSMEmailAddress" [(ngModel)]="data[0].NSMEmailAddress" style="width: 50%;">
+            </div>
+
+            <div class="form-group text-black d-flex justify-content-center">
+                <!-- <label>Phone Number</label> -->
+                <input type="text" placeholder="Enter NSM Phone Number" class="form-control" name="NSMPhoneNumber" [(ngModel)]="data[0].NSMPhoneNumber" style="width: 50%;">
+            </div>
+
+            <div class="form-group text-black d-flex justify-content-center">
+                <!-- <label>User Name</label> -->
+                <input type="text" placeholder="Enter NSM User Name" class="form-control" name="NSMUserName" [(ngModel)]="data[0].NSMUserName" style="width: 50%;">
+            </div>
+            <br>
+            <br>
+
+            <h2 class="text-secondary text-center">NSM1 Details</h2>
+            <div class="form-group text-black d-flex justify-content-center">
+                <!-- <label>Name</label> -->
+                <input type="text" placeholder="Enter NSM1 Name" class="form-control" name="NSM1Name" [(ngModel)]="data[0].NSM1Name" style="width: 50%;">
+            </div>
+
+            <div class="form-group text-black d-flex justify-content-center">
+                <!-- <label>Email Address</label> -->
+                <input type="text" placeholder="Enter NSM1 Email Address" class="form-control" name="NSM1EmailAddress" [(ngModel)]="data[0].NSM1EmailAddress" style="width: 50%;">
+            </div>
+
+            <div class="form-group text-black d-flex justify-content-center">
+                <!-- <label>Phone Number</label> -->
+                <input type="text" placeholder="Enter NSM1 Phone Number" class="form-control" name="NSM1PhoneNumber" [(ngModel)]="data[0].NSM1PhoneNumber" style="width: 50%;">
+            </div>
+
+            <div class="form-group text-black d-flex justify-content-center">
+                <!-- <label>User Name</label> -->
+                <input type="text" placeholder="Enter NSM1 User Name" class="form-control" name="NSM1UserName" [(ngModel)]="data[0].NSM1UserName" style="width: 50%;">
+            </div>
+            <br>
+            <br>
+
+            <h2 class="text-secondary text-center">VP Details</h2>
+            <div class="form-group text-black d-flex justify-content-center">
+                <!-- <label>Role</label> -->
+                <!-- <input type="text" placeholder="Enter VP Role" class="form-control" name="VPRole" [(ngModel)]="VPRole">  -->
+                <mat-form-field appearance="fill" style="width: 50%;">
+                    <mat-label>Select VP Role</mat-label>
+                    <mat-select name="VPRole" [(ngModel)]="data[0].VPRole">
+                      <mat-option value="All India">All India</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+            </div>
+            
+
+            <div class="form-group text-black d-flex justify-content-center">
+                <mat-form-field appearance="fill" style="width: 50%;" >
+                    <mat-label>Select VP Name</mat-label>
+                    <mat-select name="VPName" [(ngModel)]="data[0].VPName">
+                      <mat-option value="UB Pandey" >UB Pandey</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+            </div>
+
+            <div class="form-group text-black d-flex justify-content-center">
+                <mat-form-field appearance="fill" style="width: 50%;">
+                    <mat-label>Select VP Email Address</mat-label>
+                    <mat-select name="VPEmailAddress" [(ngModel)]="data[0].VPEmailAddress">
+                      <mat-option value="UBP@tvsmotor.com" >UBP@tvsmotor.com</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+            </div>
+
+            <div class="form-group text-black d-flex justify-content-center">
+                <mat-form-field appearance="fill" style="width: 50%;">
+                    <mat-label>Select VP Phone Number</mat-label>
+                    <mat-select name="VPPhoneNumber" [(ngModel)]="data[0].VPPhoneNumber">
+                        <mat-option *ngFor="let vp of data" [value]="vp.VPPhoneNumber">{{ vp.VPPhoneNumber }}</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+            </div>
+
+            <div class="form-group text-black d-flex justify-content-center">
+                <mat-form-field appearance="fill" style="width: 50%;">
+                    <mat-label>Select VP User Name</mat-label>
+                    <mat-select name="VPUserName" [(ngModel)]="data[0].VPUserName">
+                      <mat-option value="UBP" >UBP</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <br>
+            <br>
+
+            <h2 class="text-secondary text-center">VP1 Details</h2>
+            <div class="form-group text-black d-flex justify-content-center">
+                <mat-form-field appearance="fill" style="width: 50%;">
+                    <mat-label>Select VP1 Name</mat-label>
+                    <mat-select name="VP1Name" [(ngModel)]="data[0].VP1Name">
+                      <mat-option value="Vidit Singh" >Vidit Singh</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+            <div class="form-group text-black d-flex justify-content-center">
+                <mat-form-field appearance="fill" style="width: 50%;">
+                    <mat-label>Select VP1 Email Address</mat-label>
+                    <mat-select name="VP1EmailAddress" [(ngModel)]="data[0].VP1EmailAddress">
+                      <mat-option value="Vidit.Singh@tvsmotor.com" >Vidit.Singh@tvsmotor.com</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+            <div class="form-group text-black d-flex justify-content-center">
+                <mat-form-field appearance="fill" style="width: 50%;">
+                    <mat-label>Select VP1 Phone Number</mat-label>
+                    <mat-select name="VP1PhoneNumber" [(ngModel)]="data[0].VP1PhoneNumber">
+                        <mat-option *ngFor="let vp1 of data" [value]="vp1.VP1PhoneNumber">{{ vp1.VP1PhoneNumber }}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+            <div class="form-group text-black d-flex justify-content-center">
+                <mat-form-field appearance="fill" style="width: 50%;">
+                    <mat-label>Select VP1 User Name</mat-label>
+                    <mat-select name="VP1UserName" [(ngModel)]="data[0].VP1UserName">
+                      <mat-option value="Vidit.Singh">Vidit.Singh</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <br>
+            <br>
+
+            <h2 class="text-secondary text-center">VP2 Details</h2>
+            <div class="form-group text-black d-flex justify-content-center">
+                <mat-form-field appearance="fill" style="width: 50%;">
+                    <mat-label>Select VP2 Name</mat-label>
+                    <mat-select name="VP2Name" [(ngModel)]="data[0].VP2Name">
+                      <mat-option value="D.Karthick">D.Karthick</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+            <div class="form-group text-black d-flex justify-content-center">
+                <mat-form-field appearance="fill" style="width: 50%;">
+                    <mat-label>Select VP2 Email Address</mat-label>
+                    <mat-select name="VP2EmailAddress" [(ngModel)]="data[0].VP2EmailAddress">
+                      <mat-option value="D.Karthick@tvsmotor.com">D.Karthick@tvsmotor.com</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+            <div class="form-group text-black d-flex justify-content-center">
+                <mat-form-field appearance="fill" style="width: 50%;">
+                    <mat-label>Select VP2 Phone Number</mat-label>
+                    <mat-select name="VP2PhoneNumber" [(ngModel)]="data[0].VP2PhoneNumber">
+                        <mat-option *ngFor="let vp2 of data" [value]="vp2.VP2PhoneNumber">{{ vp2.VP2PhoneNumber }}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+            <div class="form-group text-black d-flex justify-content-center">
+                <mat-form-field appearance="fill" style="width: 50%;">
+                    <mat-label>Select VP2 User Name</mat-label>
+                    <mat-select name="VP2UserName" [(ngModel)]="data[0].VP2UserName">
+                      <mat-option value="D.Karthick">D.Karthick</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <br>
+            <br>
+
+            <h2 class="text-secondary text-center ">HO Details</h2>
+            <div class="form-group text-black d-flex justify-content-center">
+                <mat-form-field appearance="fill" style="width: 50%;">
+                    <mat-label>Select HO Role</mat-label>
+                    <mat-select name="HORole" [(ngModel)]="data[0].HORole">
+                      <mat-option value="All India">All India</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+            <div class="form-group text-black d-flex justify-content-center">
+                <mat-form-field appearance="fill" style="width: 50%;">
+                    <mat-label>Select HO Name</mat-label>
+                    <mat-select name="HOName" [(ngModel)]="data[0].HOName">
+                      <mat-option value="SALES SUPPORT">SALES SUPPORT</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+            <div class="form-group text-black d-flex justify-content-center">
+                <mat-form-field appearance="fill" style="width: 50%;">
+                    <mat-label>Select HO Email Address</mat-label>
+                    <mat-select name="HOEmailAddress" [(ngModel)]="data[0].HOEmailAddress">
+                      <mat-option value="SALES.SUPPORT@TVSMOTOR.COM">SALES.SUPPORT@TVSMOTOR.COM</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+            <div class="form-group text-black d-flex justify-content-center">
+                <mat-form-field appearance="fill" style="width: 50%;">
+                    <mat-label>Select HO Phone Number</mat-label>
+                    <mat-select name="HOPhoneNumber" [(ngModel)]="data[0].HOPhoneNumber">
+                        <mat-option *ngFor="let ho of data" [value]="ho.HOPhoneNumber">{{ ho.HOPhoneNumber }}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+            <div class="form-group text-black d-flex justify-content-center">
+                <mat-form-field appearance="fill" style="width: 50%;">
+                    <mat-label>Select HO User Name</mat-label>
+                    <mat-select name="HOUserName" [(ngModel)]="data[0].HOUserName">
+                      <mat-option value="SALES.SUPPORT">SALES.SUPPORT</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <br>
+            <br>
+
+            <div class="container d-flex justify-content-center">
+                <button type="submit" class="button btn text-white" >Update Dealer</button>
+            </div>
+            <br>
+            <br>
+             
+    
+        </form>
+        
+    </div>
+</div>
+

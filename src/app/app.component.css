@@ -1,0 +1,9 @@
+h1{
+    text-align: center;
+}
+
+.full-window{
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
